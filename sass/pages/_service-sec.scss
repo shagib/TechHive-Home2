@@ -2,7 +2,9 @@
     padding: 100px 0;
     background-color: $bg-color;
     position: relative;
-
+    @include xs {
+        padding: 80px 20px;
+    }
 
     .service-bg{
         position: absolute;
@@ -22,8 +24,22 @@
         @include flex(center, center);
         flex-direction: column;
 
+        @include xs {
+            padding: 0 20px;
+        }
+
         .service-title-sec{
             padding: 0 140px;
+            
+            @include md {
+                padding: 0 60px
+            }
+            @include sm {
+                padding: 0 60px
+            }
+            @include sm {
+                padding: 0 0px
+            }
            h5{
             @include subtitle($primary-color);
            }
@@ -32,6 +48,10 @@
         .card-sec{
             padding: 50px 0;
 
+            @include xs {
+                padding: 40px 0;
+            }
+            
             .service-card{
                 @include flex(none, flex-start);
                 flex-direction: column;
@@ -42,6 +62,10 @@
                 transition: all 0.5s ease-out;
                 position: relative;
                 top: 0;
+                @include sm {
+                    padding: 60px;
+                }
+                
 
                 &:hover {
                     top: -5px;
@@ -70,6 +94,10 @@
                     margin-top: 5px;
                     .card-body-desc{
                         @include paragraph(16px,400, 28px, $text-color, 10px);
+
+                        @include xs {
+                            font-size: 14px;
+                        }
                     }
                 }
 

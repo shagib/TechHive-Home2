@@ -4,6 +4,10 @@
     background-size: cover;
     position: relative;
 
+    @include xs {
+        padding: 80px 20px;
+    }
+
     .page-overlay{
         background: rgba(2, 10, 39, 0.7);
         position: absolute;

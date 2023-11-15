@@ -25,12 +25,42 @@
                 nextArrow:
                     "<button type='button' class='slider-arrow-btn next-btn'><i class='fa-solid fa-angle-right'></i></button>",
                 responsive: [
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            autoplay: true,
+                    
+                       
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 1,
+    
+                            },
                         },
-                    },
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 1,
+                        
+                            },
+                        },
+
+{
+    breakpoint: 767,
+    settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+
+    },
+},
+{
+    breakpoint: 576,
+    settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+
+    },
+},
+
                 ],
             });
 
@@ -55,9 +85,34 @@
                     
                 responsive: [
                     {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                        },
+                    },
+                    
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 3,
+                        },
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2,
+                        },
+                    },
+                    {
                         breakpoint: 767,
                         settings: {
-                            autoplay: true,
+                            slidesToShow : 2,
+                        },
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow : 1,
                         },
                     },
                 ],

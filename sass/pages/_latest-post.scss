@@ -2,10 +2,23 @@
     padding: 100px 0;
     background-color: $bg-color;
 
+    @include sm {
+        padding: 80px 20px;
+    }
+
+    @include xs {
+        padding: 80px 20px;
+    }
+
     .latest-post-area {
         @include flex(center, center);
         flex-direction: column;
         gap: 50px;
+
+        @include sm {
+            padding: 0 40px;
+            gap: 40px;
+        }
 
         .post-title {
             text-align: center;
@@ -50,6 +63,9 @@
                     span{
                         @include paragraph(12px, 500, 21px, $title-color, none);
                         padding: 4px 18px;
+                        @include xs {
+                            font-size: 10px;
+                        }
                     }
                 }
             }
@@ -96,6 +112,11 @@
                     p {
                         @include paragraph(16px, 400, 28px, $text-color, 15px);
                         text-transform: capitalize;
+
+                        @include xs {
+                            font-size: 14px;
+                            line-height: 22px;
+                        }
                     }
                 }
             }

@@ -1,4 +1,5 @@
 @import "variable";
+@import "mixin";
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
 
 *{
@@ -20,7 +21,13 @@
     &:hover{
         background-color: $secondary-color;
         color: $title-color;
-    }   
+    }  
+    @include md {
+        font-size: 14px;
+    } 
+    @include sm {
+        font-size: 13px;
+    } 
 }
 .menu{
     text-decoration: none;
@@ -38,6 +45,30 @@
     color: $title-color;
     text-transform: capitalize;
     margin-top: 8px;
+   
+    @include xl {
+        font-size: 45px;
+        line-height: 54px;
+    }
+    @include lg {
+        font-size: 38px;
+        line-height: 48px;
+    }
+    @include md {
+        font-size: 32px;
+        line-height: 48px;
+    }
+   
+    @include sm {
+        font-size: 30px;
+        line-height: 48px;
+    }
+    @include xs {
+        font-size: 24px;
+        line-height: 38px;
+    }
+   
+
 }
 h3{
     font-family: "Playfair Display", sans-serif;
@@ -46,6 +77,16 @@ h3{
     line-height: 28px;
     color: $title-color;
     text-transform: capitalize;
+
+    @include lg {
+        font-size: 22px;
+    }
+    @include md {
+        font-size: 20px;
+    }
+    @include xs {
+        font-size: 18px;
+    }
 }
 h4{
     font-size: 20px;
@@ -53,4 +94,11 @@ h4{
     line-height: 28px;
     font-family: "Playfair Display", sans-serif;
     color: $title-color;
+    @include sm {
+        font-size: 22px;
+    }
+    
+    @include xs {
+        font-size: 18px;
+    }
 }

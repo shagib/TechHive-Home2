@@ -8,11 +8,12 @@
             align-items: center;
 
             a img{
-                width: 221px;
-                height: 46px;
+             width: 100%;
+             height: auto;
             }
         }
         .address-bar{
+            display: flex;
             gap: 60px;
             .address{
                 gap: 12px;
@@ -22,11 +23,35 @@
                     height: 50px;
                     width: 50px;
                     border-radius: 50%;
+                    flex-shrink: 0;
+
+                    @include xl {
+                        height: 50px;
+                        width: 50px;
+
+                        i{
+                            font-size: 22px;
+                        }
+                    }
+                    @include lg {
+                        height: 40px;
+                        width: 40px;
+                        i{
+                            font-size: 18px;
+                        }
+                    }
                     
                     i{
                         font-size: 22px;
                         line-height: 22px;
                         color: $primary-color;
+
+                        @include xl {
+                            font-size: 22px;
+                        }
+                        @include lg {
+                            font-size: 18px;
+                        }
                     }
                 }
                span{
@@ -44,7 +69,18 @@
                     
                 
             }
+            @include md {
+                display: none;
+            }
+            @include sm {
+                display: none;
+            }
+            @include xs {
+                display: none;
+            }
+            
         }
+
         
     }
 }
@@ -54,7 +90,6 @@
     position: absolute;
     width: 100%;
 
-    
     nav{
         height: 100px;
         
@@ -124,5 +159,14 @@
             }
         }
       
+    }
+    @include md {
+        display: none;
+    }
+    @include sm {
+        display: none;
+    }
+    @include xs {
+        display: none;
     }
 }

@@ -1,11 +1,26 @@
 .peoject-sec{
     padding: 100px 0;
 
+    @include sm {
+        padding: 80px 20px;
+    }
+    @include xs {
+        padding: 80px 20px;
+    }
+
     .project-area {
         @include flex(center, center);
         flex-direction: column;
         gap: 50px;
+        @include sm {
+            padding: 0 40px;
+            gap: 36px;
+        }
 
+        @include xs {
+            padding: 0 40px;
+            gap: 36px;
+        }
 
         .project-title{
             h5{
@@ -65,6 +80,10 @@
                         }
                         span {
                             @include paragraph(16px, 400, 28px, $bg-color1, none);
+
+                            @include xs {
+                                font-size: 14px;
+                            }
                         }
                     }
                     a{
@@ -77,7 +96,10 @@
                         color: $title-color;
                         font-size: 17px;
                         transition: all 0.3s ease-out;
-
+                        @include xs {
+                            width: 46px;
+                            height: 46px;
+                        }
                         &:hover{
                             background-color: $title-color;
                             color: $bg-color1;

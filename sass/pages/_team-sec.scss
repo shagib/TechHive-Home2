@@ -2,8 +2,18 @@
     padding: 100px 0;
     background: $bg-color1;
     position: relative;
+
+    @include sm {
+        padding: 80px 20px;
+    }
+    @include xs {
+        padding: 80px 20px;
+    }
     .member-sec{
         position: relative;
+        @include xs {
+            padding: 0 40px;
+        }
         .team-title-sec{
             margin-bottom: 64px;
 
@@ -18,21 +28,33 @@
 
             .slick-track{
                 margin: 0 -12px;
-
+                @include xs {
+                    margin: 0 0;
+                }
                 .team-member-slider{
                     margin: 0 12px;
+                    @include xs {
+                        margin: 0 18px;
+                    }
                 }
             }
             .prev-btn, .next-btn{
                 position: absolute;
                 bottom: -50px;
-                
                 width: 60px;
                 height: 60px;
                 border: 1px solid #D3D3D3;
                 border-radius: 50px;
                 background: $bg-color1;
                 transition: all 0.5s ease-out;
+
+               
+                @include sm {
+                    display: none !important;
+                }
+                @include xs {
+                    display: none !important;
+                }
                
                 &:hover{
                     background-color: $primary-color;
@@ -53,6 +75,15 @@
                 padding: 0 110px;
                 margin-top: 50px;
                 margin-bottom: 50px;
+
+               
+                @include sm {
+                    display: none !important;
+                }
+                @include xs {
+                    display: none !important;
+                }
+                
 
                 .slick-active button{
                     background: $primary-color;
@@ -126,6 +157,7 @@
                             width: 44px;
                             height: 44px;
                             @include flex(center,center);
+                            flex-shrink: 0;
                             background: $bg-color1;
                             border-radius: 10px;
                             text-decoration: none;

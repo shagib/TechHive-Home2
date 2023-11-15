@@ -2,7 +2,9 @@
     background-color: $bg-color2;
     padding: 65px 0 35px 0;
     position: relative;
-
+    @include xs {
+        padding: 70px 20px;
+    }
     .footer-shape {
         position: absolute;
         bottom: 0;
@@ -18,6 +20,8 @@
     .footer-contact {
         @include flex(space-between, center);
         margin-bottom: 65px;
+        flex-wrap: wrap;
+        gap: 24px;
 
         .address {
             @include flex(flex-start,center);
@@ -27,10 +31,19 @@
                 @include icon-img(50px, 50px, $bg-color2);
                 border: 1px solid #A5AABB;
                 @include flex(center, center);
+                flex-shrink: 0;
+                @include xs {
+                    width: 40px;
+                    height: 40px;
+                }
     
                 i {
                     color: $secondary-color;
                     font-size: 22px;
+
+                    @include xs {
+                        font-size: 16px;
+                    }
                 }
             }
             .address-text {
@@ -50,10 +63,13 @@
         z-index: 2;
         position: relative;
 
+        @include xs {
+            padding: 65px 0;
+        }
+
         .footer-widget {
             .footer-logo {
-                width: 218px;
-                height: 46px;
+                display: flex;
 
               a{
                 img {
@@ -65,12 +81,19 @@
 
             p {
                 @include paragraph(16px, 400, 28px, $text-color3, 35px);
+                @include lg {
+                    font-size: 14px;
+                }
+                @include md {
+                    font-size: 14px;
+                }
 
             }
             .social-widget {
                 margin-top: 30px;
                 display: flex;
                 gap: 12px;
+                flex-wrap: wrap;
 
                 a {
                     text-decoration: none;
@@ -80,7 +103,11 @@
                    font-size: 18px;
                    color: $bg-color1;
                    transition: all 0.5s ease-out;
-                    
+                    @include xs {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 16px;
+                    }
                    &:hover {
                         background-color: $primary-color;
                    }
@@ -126,6 +153,19 @@
                             margin-right: 10px;
                             color: #424B6A;
                             transition: all 0.5s ease-out;
+                            @include lg {
+                                font-size: 13px;
+                            }
+                            @include md {
+                                font-size: 12px;
+                            }
+                        }
+
+                        @include lg {
+                            font-size: 13px;
+                        }
+                        @include md {
+                            font-size: 14px;
                         }
                     }
                 }
@@ -140,6 +180,12 @@
             p {
                 @include paragraph(16px, 400, 20px, $text-color3, 24px);
                 
+                @include lg {
+                    font-size: 14px;
+                }
+                @include md {
+                    font-size: 14px;
+                }
             }
             .subscribe-form {
                 gap: 24px;
@@ -169,11 +215,24 @@
     .footer-bottom-wrapper{
         @include flex(space-between, center);
         padding: 35px 0;
+        position: relative;
+        z-index: 2;
+
+       @include sm {
+        flex-direction: column-reverse;
+        gap: 24px;
+        padding: 65px 0 0 0;
+       }
 
         .coppyright-text {
+            @include xs {
+                padding: 0 16px;
+            }
             span {
                 @include paragraph(16px, 400, 20px, rgba(255, 255, 255, 0.5), none);
-
+                @include md {
+                    font-size: 14px;
+                }
             }
         }
         .footer-bottom-menu {
@@ -185,10 +244,18 @@
                 li {
                     display: inline-block;
                     margin-left: 40px;
+                    @include sm {
+                        padding: 0 16px;
+                        margin-left: 0;
+                        margin-bottom: 10px;
+                    }
 
                     a {
                         text-decoration: none;
                         @include paragraph(16px, 400, 20px, rgba(255, 255, 255, 0.5),none);
+                        @include md {
+                            font-size: 14px;
+                        }
                     }
                 }
             }

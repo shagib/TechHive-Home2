@@ -6,12 +6,25 @@
     font-family: "DM Sans", sans-serif;
     color: $color;
     text-transform: uppercase;
+    @include md {
+      font-size: 16px;
+    }
+    @include sm {
+      font-size: 14px;
+    }
+    @include xs {
+      font-size: 14px;
+      line-height: 22px;
+    }
+   
 }
-@mixin heading($height, $color){
-    font-size: 60px;
-    font-weight: 700;
+@mixin heading($weight, $size, $height, $color){
+    font-weight: $weight;
+    font-size: $size;
     line-height: $height;
     color: $color;
+    font-family: "Playfair Display", sans-serif;
+ 
 }
 @mixin paragraph($size,$weight,$height,$color, $m-top){
     font-size: $size;
@@ -34,3 +47,33 @@
     background-color: $bg;
     border-radius: 50px;
 }
+
+// Small devices
+@mixin xs {
+    @media only screen and (min-width: 0px) and (max-width:576px){
+      @content;
+    }
+  }
+  @mixin sm {
+    @media only screen and (min-width: 0px) and (max-width: 767px){
+      @content;
+    }
+  }
+  // Medium devices
+  @mixin md {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+  
+  // Large devices
+  @mixin lg {
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @mixin xl {
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+      @content;
+    }
+  }

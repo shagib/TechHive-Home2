@@ -1,77 +1,197 @@
+
 .feature-area{
     background-color: $bg-color;
     padding-bottom: 100px;
-}
-.feature-item{
-    margin-top: -140px;
-    z-index: 2;
-}
 
-.item-card{
-    padding: 30px 42px;
-    gap: 25px;
-    transition: all 0.5s ease-out;
-    position: relative;
-    top: 0;
 
-    &:hover {
-        top: -5px;
+    @include sm {
+        padding: 0 20px 80px 20px;
+    }
+    @include xs {
+        padding: 0 20px 80px 20px;
+    }
 
-        .item-img1, .item-img2, .item-img3, .item-img4{
-            transform: rotateY(-360deg);
-            background-color: $primary-color;
+    .feature-item{
+        margin-top: -140px;
+        z-index: 2;
+        .card {
+            --bs-card-border-width: none;
+            border: none;
+            --bs-card-border-radius: none;
+          
+            @include xl {
+                --bs-card-border-radius: 14px;
+                .card-one {
+                    border-radius: 14px 0 0 14px;
+                }
+                .card-four {
+                    border-radius: 0 14px 14px 0;
+                }
+            }
+            @include lg {
+                --bs-card-border-radius: 14px;
+                .card-one {
+                    border-radius: 14px 0 0 14px;
+                }
+                .card-four {
+                    border-radius: 0 14px 14px 0;
+                }
+            }
+
+            @include md {
+                --bs-card-border-radius: 14px;
+            }
+            @include sm {
+                --bs-card-border-radius: 14px;
+            }
+            @include xs {
+                --bs-card-border-radius: 14px;
+            }
+        }
+        .item-card{
+            transition: all 0.5s ease-out;
+            position: relative;
             
-            span {
-                color: $bg-color1;
+           
+           
+            &:hover {
+                top: -5px;
+
+                .item-img, .item-img, .item-img, .item-img{
+                    transform: rotateY(-360deg);
+                    background-color: $primary-color;
+                    
+                    span {
+                        color: $bg-color1;
+                    }
+                }
+            }
+            .card-one, .card-two, .card-three, .card-four {
+                @include flex (center, center);
+                flex-direction: column;
+                gap: 25px;
+                padding: 30px 42px;
+
+                @include lg {
+                    padding: 30px 20px;
+                }
+                @include md {
+                    padding: 30px 20px;
+                    border-radius: 14px;
+                }
+                @include sm {
+                    padding: 40px 50px;
+                    border-radius: 14px;
+                }
+                @include xs {
+                    padding: 40px 50px;
+                    border-radius: 14px;
+                }
+                .item-title{
+                    p{
+                        @include paragraph(14px, 400, 25px, $text-color, 10px);
+
+                        @include sm {
+                            font-size: 16px;
+                        }
+                        @include xs {
+                            font-size: 14px;
+                        }
+                    }
+                    
+                }
+            }
+
+            .card-one, .card-three {
+                background-color: $bg-color1;
+            }
+            .card-two, .card-four {
+                background-color: #ECF0FB;
+            }
+          
+            
+            .card-one, .card-three {
+                .item-img{
+                    @include flex(center,center);
+                    @include icon-img(80px, 80px, $icon-color);
+                    transition: all 0.5s ease-out;
+                    @include sm {
+                        width: 100px;
+                        height: 100px;
+                    }
+    
+                    @include xs {
+                        width: 80px;
+                        height: 80px;
+                    }
+    
+                    span{
+                        font-size: 35px;
+                        color: $primary-color;
+                        @include sm {
+                            font-size: 50px;
+                        }
+                        @include xs {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            
+            .card-two, .card-four {
+                .item-img {
+                    @include flex(center,center);
+                    @include icon-img(80px, 80px, $bg-color1);
+                    transition: all 0.5s ease-out;
+                    @include sm {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    @include xs {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    
+                    span{
+                        font-size: 35px;
+                        color: $primary-color;
+                        @include sm {
+                            font-size: 50px;
+                        }
+                        @include xs {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            
+                
+        }
+    }
+    .feature-title-sec{
+        margin-top: 100px;
+
+        @include sm {
+            margin-top: 40px;
+        }
+        @include xs {
+            margin-top: 40px;
+        }
+        
+        .row {
+            @include xs {
+                padding: 0 28px;
+                h2 {
+                    text-align: center;
+
+                }
+            }
+            .view-btn {
+                @include xs {
+                    justify-content: center !important;
+                }
             }
         }
     }
-
-    &:nth-child(1){
-        background-color: $bg-color1;
-        border-radius: 14px 0 0 14px;
-    }
-    &:nth-child(2){
-        background-color: #ECF0FB;
-    }
-    &:nth-child(3){
-        background-color: $bg-color1;
-    }
-    &:nth-child(4){
-        background-color: #ECF0FB;
-        border-radius: 0 14px 14px 0;
-    }
-    
-    .item-img1, .item-img3{
-        @include flex(center,center);
-        @include icon-img(80px, 80px, $icon-color);
-        transition: all 0.5s ease-out;
-
-
-        span{
-            font-size: 35px;
-            color: $primary-color;
-        }
-    }
-    .item-img2, .item-img4{
-        @include flex(center,center);
-        @include icon-img(80px, 80px, $bg-color1);
-        transition: all 0.5s ease-out;
-
-        
-        span{
-            font-size: 35px;
-            color: $primary-color;
-        }
-    }
-
-    .item-title{
-        p{
-            @include paragraph(14px, 400, 25px, $text-color, 10px);
-        }
-    }
-        
-}
-.feature-title-sec{
-    margin-top: 100px;
 }
