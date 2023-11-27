@@ -3,8 +3,10 @@
 @import "variable";
 @import "mixin";
 
-@import "./pages/header";
-@import "./pages/hero-section";
+@import "./module/navbar/header";
+@import "./module/navbar/navbar-style1";
+@import "./module/hero-area/hero-section";
+@import "./module/hero-area/hero-section-2";
 @import "./pages/feature";
 @import "./pages/about";
 @import "./pages/client-sec";

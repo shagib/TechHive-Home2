@@ -6,6 +6,11 @@
   font-family: "DM Sans", sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .btn {
   font-size: 16px;
   font-weight: 500;
@@ -48,6 +53,7 @@
   color: #04144E;
   text-transform: capitalize;
   margin-top: 8px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .title {
@@ -87,6 +93,7 @@ h3 {
   line-height: 28px;
   color: #04144E;
   text-transform: capitalize;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   h3 {
@@ -110,6 +117,7 @@ h4 {
   line-height: 28px;
   font-family: "Playfair Display", sans-serif;
   color: #04144E;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   h4 {
@@ -140,6 +148,11 @@ h4 {
 .header-top .header-top-wrapper .address-bar {
   display: flex;
   gap: 60px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-top .header-top-wrapper .address-bar {
+    gap: 24px;
+  }
 }
 .header-top .header-top-wrapper .address-bar .address {
   gap: 12px;
@@ -212,15 +225,66 @@ h4 {
     display: none;
   }
 }
+.header-top .header-top-wrapper #toggle-bar {
+  font-size: 24px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-top .header-top-wrapper #toggle-bar {
+    display: block;
+  }
+}
 
 .header-sec {
   background-color: rgba(4, 20, 78, 0.5);
   z-index: 3;
   position: absolute;
   width: 100%;
+  display: inline-block;
+}
+.header-sec.active {
+  display: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-sec {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-sec {
+    display: none;
+  }
+  .header-sec .nav-menu {
+    align-items: flex-start !important;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #F3F4F8;
+    height: 100% !important;
+  }
+  .header-sec .nav-menu li {
+    padding: 15px 20px;
+    width: 100%;
+    border-top: 1px solid #D2D6E4;
+    border-bottom: 1px solid #D2D6E4;
+  }
+  .header-sec .nav-menu li a {
+    color: #04144E;
+    font-size: 18px;
+  }
 }
 .header-sec nav {
   height: 100px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-sec nav {
+    height: 100%;
+  }
 }
 .header-sec nav .nav-menu {
   padding: 0;
@@ -277,21 +341,98 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .header-sec {
+  .header-sec nav .btn {
     display: none;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  .header-sec {
+  .header-sec nav .btn {
     display: none;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-  .header-sec {
+  .header-sec nav .btn {
     display: none;
   }
+}
+
+.header-area.style-1 {
+  padding: 27px 0;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+.header-area.style-1 .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-area.style-1 .header-wrapper .logo {
+  flex-shrink: 0;
+}
+.header-area.style-1 .header-wrapper .main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu {
+  display: flex;
+  margin-bottom: 0;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li {
+  list-style: none;
+  position: relative;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li:hover .submenu {
+  display: initial;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .menu {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #04144E;
+  transition: 0.5s ease-out;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .menu:hover, .header-area.style-1 .header-wrapper .main-menu .nav-menu li .menu.active {
+  color: #4566D4;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .menu.active::after, .header-area.style-1 .header-wrapper .main-menu .nav-menu li .menu:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -42px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px 10px 0 0;
+  background-color: #4566D4;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .submenu {
+  background-color: #ffffff;
+  position: absolute;
+  top: 64px;
+  left: -4px;
+  width: 200px;
+  padding-left: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: none;
+  transition: 0.5s ease-in;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .submenu li {
+  padding: 10px;
+  border: 1px solid #D2D6E4;
+  cursor: pointer;
+}
+.header-area.style-1 .header-wrapper .main-menu .nav-menu li .submenu li a {
+  text-decoration: none;
+  color: #04144E;
+}
+.header-area.style-1 .header-wrapper #toggle-bar {
+  display: none;
 }
 
 .hero-sec {
@@ -356,6 +497,7 @@ h4 {
   line-height: 72px;
   color: #ffffff;
   font-family: "Playfair Display", sans-serif;
+  margin-bottom: 0;
   margin-top: 8px;
   text-transform: capitalize;
 }
@@ -395,6 +537,7 @@ h4 {
   line-height: 72px;
   color: #F7CF47;
   font-family: "Playfair Display", sans-serif;
+  margin-bottom: 0;
   font-family: "Playfair Display", sans-serif;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -435,6 +578,7 @@ h4 {
   color: #ffffff;
   text-transform: capitalize;
   margin-top: 24px;
+  margin-bottom: 0;
 }
 .hero-sec .hero-btn {
   margin-top: 54px;
@@ -451,6 +595,123 @@ h4 {
   font-size: 18px;
   color: #020A27;
 }
+#hero {
+  position: relative;
+  z-index: 1;
+}
+#hero .slider-shahel .prev-btn, #hero .slider-shahel .next-btn {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  flex-shrink: 0;
+  position: absolute;
+  top: 44%;
+  z-index: 1;
+}
+#hero .slider-shahel .prev-btn {
+  left: 30px;
+}
+#hero .slider-shahel .next-btn {
+  right: 30px;
+}
+#hero .slide-items {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+#hero .slide-items .bg {
+  content: "";
+  position: absolute;
+  height: 800px;
+  width: 50%;
+  background-color: #4566D4;
+  z-index: 1;
+}
+#hero .hero-container .hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 176px 0;
+}
+#hero .hero-container .hero-text .sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 3px;
+  font-family: "DM Sans", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #hero .hero-container .hero-text .sub-title {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #hero .hero-container .hero-text .sub-title {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+  #hero .hero-container .hero-text .sub-title {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+#hero .hero-container .hero-text h1 {
+  font-family: "Playfair Display", sans-serif;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  color: #ffffff;
+  font-family: "Playfair Display", sans-serif;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+#hero .hero-container .hero-text h1 span {
+  color: #F7CF47;
+  font-family: "Playfair Display", sans-serif;
+}
+#hero .hero-container .hero-text .desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "DM Sans", sans-serif;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+#hero .hero-container .hero-text .hero-btn {
+  margin-top: 54px;
+  display: flex;
+  flex-shrink: 0;
+  gap: 20px;
+}
+#hero .hero-container .hero-text .hero-btn .btn {
+  border: 1px solid #ffffff;
+}
+#hero .hero-container .hero-text .hero-btn .vid-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  background-color: #F7CF47;
+  border-radius: 52px;
+  flex-shrink: 0;
+}
+#hero .hero-container .hero-text .hero-btn .vid-btn a {
+  color: #020A27;
+  flex-shrink: 0;
+}
+
 .feature-area {
   background-color: #F3F4F8;
   padding-bottom: 100px;
@@ -564,6 +825,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .feature-area .feature-item .item-card .card-one .item-title p, .feature-area .feature-item .item-card .card-two .item-title p, .feature-area .feature-item .item-card .card-three .item-title p, .feature-area .feature-item .item-card .card-four .item-title p {
@@ -781,6 +1043,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: 20px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .about-sec .content-wrapper .about-sec-title .body-description {
@@ -1108,6 +1371,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
   .service-sec .service-wrapper .card-sec .service-card .card-title-sec .card-body-desc {
@@ -1134,6 +1398,7 @@ h4 {
   color: none;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .service-sec .service-wrapper .card-sec .service-card .learn-more i {
   font-size: 17px;
@@ -1221,6 +1486,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .message-form form textarea {
   width: 100%;
@@ -1241,6 +1507,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 
 .address-wrapper {
@@ -1300,6 +1567,7 @@ h4 {
   color: #7B84A2;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .address-wrapper .address .address-text h5 {
   font-size: 14px;
@@ -1309,6 +1577,7 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .address-wrapper .location-btn a {
   padding: 15px 50px;
@@ -1358,6 +1627,7 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .counter-sec .counter-wrapper .counter-item .number {
@@ -1400,6 +1670,7 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 
 .team-sec {
@@ -1572,6 +1843,7 @@ h4 {
   color: #4566D4;
   text-transform: capitalize;
   margin-top: 2px;
+  margin-bottom: 0;
 }
 .team-sec .member-sec .team-member-area .team-member .member-title-area .member-social-site {
   display: flex;
@@ -1780,6 +2052,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
   .subcribe-sec .input-field .text-field input::placeholder {
@@ -1895,6 +2168,7 @@ h4 {
   color: #ffffff;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
   .peoject-sec .project-area .project-area-wrapper .project-name .name-content .content-title span {
@@ -2012,6 +2286,7 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
   padding: 4px 18px;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
@@ -2049,6 +2324,7 @@ h4 {
   color: #04144E;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
   font-family: "Playfair Display", sans-serif;
 }
 .latest-post-sec .latest-post-area .single-post-area .post-description .post-author .author-name span {
@@ -2059,6 +2335,7 @@ h4 {
   color: #4566D4;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
   text-transform: capitalize;
 }
 .latest-post-sec .latest-post-area .single-post-area .post-description .post-title {
@@ -2073,6 +2350,7 @@ h4 {
   color: #6A6C73;
   text-transform: capitalize;
   margin-top: 15px;
+  margin-bottom: 0;
   text-transform: capitalize;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
@@ -2150,6 +2428,7 @@ h4 {
   color: #A5AABB;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .footer .footer-contact .address .address-text h5 {
   font-size: 14px;
@@ -2159,6 +2438,7 @@ h4 {
   color: #ffffff;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .footer .footer-sec {
   padding: 80px 0 70px 0;
@@ -2187,6 +2467,7 @@ h4 {
   color: #A5AABB;
   text-transform: capitalize;
   margin-top: 35px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .footer .footer-sec .footer-widget p {
@@ -2262,6 +2543,7 @@ h4 {
   color: #A5AABB;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
   transition: all 0.5s ease-out;
 }
 .footer .footer-sec .footer-widget-menu ul li a::before {
@@ -2305,6 +2587,7 @@ h4 {
   color: #A5AABB;
   text-transform: capitalize;
   margin-top: 24px;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .footer .footer-sec .subscribe-area p {
@@ -2334,6 +2617,7 @@ h4 {
   color: #A5AABB;
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 .footer .footer-sec .subscribe-area .subscribe-form a {
   color: #ffffff;
@@ -2367,6 +2651,7 @@ h4 {
   color: rgba(255, 255, 255, 0.5);
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer .footer-bottom-wrapper .coppyright-text span {
@@ -2398,6 +2683,7 @@ h4 {
   color: rgba(255, 255, 255, 0.5);
   text-transform: capitalize;
   margin-top: none;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer .footer-bottom-wrapper .footer-bottom-menu ul li a {

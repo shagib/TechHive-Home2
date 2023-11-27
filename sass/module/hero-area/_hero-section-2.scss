@@ -1,0 +1,94 @@
+#hero {
+    position: relative;
+    z-index: 1;
+
+    .slider-shahel {
+        .prev-btn, .next-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.20);
+            color: $bg-color1;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            flex-shrink: 0;
+            position: absolute;
+            top: 44%;
+            z-index: 1;
+        }
+        .prev-btn {
+            left: 30px;
+        }
+        .next-btn {
+            right: 30px;
+        }
+    }
+
+    .slide-items {
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 800px;
+
+        .bg {
+            content: "";
+            position: absolute;
+            height: 800px;
+            width: 50%;
+            background-color: $primary-color;
+            z-index: 1;
+        }
+    }
+
+    .hero-container {
+
+       .hero-text {
+        position: relative;
+        z-index: 2;
+        padding: 176px 0;
+    
+            .sub-title {
+                @include subtitle($bg-color1);
+            
+            }
+            h1 {
+                font-family: $body-title;
+                text-transform: capitalize;
+                @include heading(700, 60px, 72px, $bg-color1);
+                margin-top: 8px;
+
+                span {
+                    color: $secondary-color;
+                    font-family: $body-title;
+                }
+            }
+            .desc {
+                @include paragraph(16px,400,28px,$bg-color1, 20px);
+            }
+            .hero-btn {
+                margin-top: 54px;
+                display: flex;
+                flex-shrink: 0;
+                gap: 20px;
+
+                .btn {
+                    border: 1px solid $bg-color1;
+
+                }
+                .vid-btn {
+                    @include flex(center, center);
+                    width: 52px;
+                    height: 52px;
+                    background-color: $secondary-color;
+                    border-radius: 52px;
+                    flex-shrink: 0;
+                    a {
+                        color: $bg-color2;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+       }
+    }
+}

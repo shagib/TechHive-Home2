@@ -15,6 +15,11 @@
         .address-bar{
             display: flex;
             gap: 60px;
+
+            @include lg {
+                gap: 24px;
+            }
+
             .address{
                 gap: 12px;
                 .address-icon{
@@ -81,6 +86,20 @@
             
         }
 
+        // toggle bar style
+        #toggle-bar {
+            font-size: 24px;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            cursor: pointer;
+            @include md {
+                display: block;
+            }
+        }
+
         
     }
 }
@@ -89,17 +108,52 @@
     z-index: 3;
     position: absolute;
     width: 100%;
+    display: inline-block;
+    &.active {
+        display: none;      
+    } 
+    @include lg {
+        display: block;
+    }
+
+    
+    @include md {
+        display: none;
+
+        .nav-menu {
+            align-items: flex-start !important;
+            width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: $bg-color;
+            height: 100% !important;
+
+            li {
+                padding: 15px 20px;
+                width: 100%;
+                border-top: 1px solid $field-color;
+                border-bottom: 1px solid $field-color;
+
+                a {
+                    color: $title-color;
+                    font-size: 18px;
+                }
+            }
+        }   
+    }
 
     nav{
         height: 100px;
-        
+
+        @include md {
+            height: 100%;
+        }
+       
         .nav-menu{
             padding: 0;
             margin: 0;
             height: 100px;
             align-items: center;
-
-           
 
             li{
                 list-style: none; 
@@ -153,20 +207,25 @@
                         a {
                             text-decoration: none;
                             @include paragraph(16px, 400, 17px, $title-color, none);
+
+                            
                         }
                     }
                 }
             }
         }
+        .btn {
+            @include md {
+                display: none;
+            }
+            @include sm {
+                display: none;
+            }
+            @include xs {
+                display: none;
+            }
+        }
       
     }
-    @include md {
-        display: none;
-    }
-    @include sm {
-        display: none;
-    }
-    @include xs {
-        display: none;
-    }
+ 
 }
