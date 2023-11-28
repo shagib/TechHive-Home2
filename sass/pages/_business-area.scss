@@ -1,0 +1,84 @@
+#business {
+    padding: 100px 0;
+    background-color: $bg-color1;
+
+    .img-part {
+        position: relative;
+
+        .image {
+            border-radius: 14px;
+            width: 400px;
+            height: auto;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .img-two {
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+            border-radius: 14px;
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+
+            .top-img {
+                border-radius: 14px;
+                flex-shrink: 0;
+                overflow: hidden;
+                position: relative;
+
+                .video-btn {
+                    width: 70px;
+                    height: 70px;
+                    background-color: $primary-color;
+                    border-radius: 50%;
+                    color: $bg-color1;
+                    flex-shrink: 0;
+                    @include flex(center,center);
+                    position: absolute;
+                    top: 40%;
+                    left: 40%;
+    
+                    a {
+                        color: $bg-color1;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+           
+        }
+    }
+
+    .content-part {
+        .btn {
+            margin-top: 50px;
+        }
+        .title-section {
+            margin-bottom: 30px;
+        }
+
+        .business-items {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+
+            .item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .check {
+                    width: 30px;
+                    height: 30px;
+                    @include flex(center,center);
+                    flex-shrink: 0;
+                    background-color: rgba(69, 102, 212, 0.10);
+                    border-radius: 50%;
+                }
+                span {
+                    @include paragraph(16px,500,22px,$title-color, none);
+                }
+            }
+        }
+    }
+}

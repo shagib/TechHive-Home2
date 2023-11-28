@@ -1,0 +1,220 @@
+
+.feature-area {
+    &.style-1 {
+        .feature-item {
+
+            .item-img {
+                @include flex(center,center);
+                @include icon-img(80px, 80px, $icon-color);
+                transition: all 0.5s ease-out;
+                @include sm {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                @include xs {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                span{
+                    font-size: 35px;
+                    color: $primary-color;
+                    @include sm {
+                        font-size: 50px;
+                    }
+                    @include xs {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+        .item-card{
+            &.card {
+                border-radius: 14px;
+                border: none;
+            }
+            transition: all 0.5s ease-out;
+            position: relative;
+            background-color: $bg-color1;
+           
+            &:hover {
+                top: -5px;
+    
+                .item-img, .item-img, .item-img, .item-img{
+                    transform: rotateY(-360deg);
+                    background-color: $primary-color;
+                    
+                    span {
+                        color: $bg-color1;
+                    }
+                }
+            }
+        }    
+    }
+}
+
+.feature-item{
+
+    &.style-1 {
+
+        .card {
+            --bs-card-border-width: none;
+            border: none;
+            --bs-card-border-radius: none;
+          
+            @include xl {
+                --bs-card-border-radius: 14px;
+                .card-one {
+                    border-radius: 14px 0 0 14px;
+                }
+                .card-four {
+                    border-radius: 0 14px 14px 0;
+                }
+            }
+            @include lg {
+                --bs-card-border-radius: 14px;
+                .card-one {
+                    border-radius: 14px 0 0 14px;
+                }
+                .card-four {
+                    border-radius: 0 14px 14px 0;
+                }
+            }
+    
+            @include md {
+                --bs-card-border-radius: 14px;
+            }
+            @include sm {
+                --bs-card-border-radius: 14px;
+            }
+            @include xs {
+                --bs-card-border-radius: 14px;
+            }
+        }
+        .item-card{
+            transition: all 0.5s ease-out;
+            position: relative;
+            
+           
+           
+            &:hover {
+                top: -5px;
+    
+                .item-img, .item-img, .item-img, .item-img{
+                    transform: rotateY(-360deg);
+                    background-color: $primary-color;
+                    
+                    span {
+                        color: $bg-color1;
+                    }
+                }
+            }
+    
+            .card-one, .card-three {
+                background-color: $bg-color1;
+            }
+            .card-two, .card-four {
+                background-color: #ECF0FB;
+            }
+          
+            
+            .card-one, .card-three {
+                .item-img{
+                    @include flex(center,center);
+                    @include icon-img(80px, 80px, $icon-color);
+                    transition: all 0.5s ease-out;
+                    @include sm {
+                        width: 100px;
+                        height: 100px;
+                    }
+    
+                    @include xs {
+                        width: 80px;
+                        height: 80px;
+                    }
+    
+                    span{
+                        font-size: 35px;
+                        color: $primary-color;
+                        @include sm {
+                            font-size: 50px;
+                        }
+                        @include xs {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            
+            .card-two, .card-four {
+                .item-img {
+                    @include flex(center,center);
+                    @include icon-img(80px, 80px, $bg-color1);
+                    transition: all 0.5s ease-out;
+                    @include sm {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    @include xs {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    
+                    span{
+                        font-size: 35px;
+                        color: $primary-color;
+                        @include sm {
+                            font-size: 50px;
+                        }
+                        @include xs {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+    
+            
+                
+        }
+    }
+
+    .card-one, .card-two, .card-three, .card-four {
+        @include flex (center, center);
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px 42px;
+
+        @include lg {
+            padding: 30px 20px;
+        }
+        @include md {
+            padding: 30px 20px;
+            border-radius: 14px;
+        }
+        @include sm {
+            padding: 40px 50px;
+            border-radius: 14px;
+        }
+        @include xs {
+            padding: 40px 50px;
+            border-radius: 14px;
+        }
+        .item-title{
+            p{
+                @include paragraph(14px, 400, 25px, $text-color, 10px);
+
+                @include sm {
+                    font-size: 16px;
+                }
+                @include xs {
+                    font-size: 14px;
+                }
+            }
+            
+        }
+        .item-img {
+            flex-shrink: 0;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.title-section {
+    margin-bottom: 50px;
+    text-align: center;
+
+    .sub-title {
+        @include subtitle($primary-color);
+    }
+    .desc {
+        @include paragraph(16px,400,28px,$text-color, 20px);
+    }
+}
