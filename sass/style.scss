@@ -17,7 +17,9 @@
 
 @import "./pages/about";
 @import "./pages/client-sec";
-@import "./pages/service-sec";
+
+@import "./module/service/service-sec";
+@import "./module/service/service-sec-style-one";
 
 
 @import "./module/contact/contact-sec";

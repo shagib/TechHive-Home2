@@ -83,6 +83,7 @@
                 .card-img{
                     @include icon-img(70px, 70px, #ECF0FB);
                     @include flex(center,center);
+                    flex-shrink: 0;
                     transition: all 0.5s ease-out;
 
                     span{

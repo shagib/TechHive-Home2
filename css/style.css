@@ -1541,6 +1541,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   transition: all 0.5s ease-out;
 }
 .service-sec .service-wrapper .card-sec .service-card .card-img span {
@@ -1590,6 +1591,22 @@ h4 {
 .service-sec .service-wrapper .card-sec .service-card .learn-more i {
   font-size: 17px;
   transition: all 0.5s ease-out;
+}
+
+.service-sec.style-1 {
+  padding-top: 250px;
+  padding-bottom: 100px;
+  margin-top: -150px;
+}
+.service-sec.style-1 .service-wrapper .card-sec .service-card {
+  flex-direction: row;
+  gap: 25px;
+}
+.service-sec.style-1 .service-wrapper .card-sec .service-card .card-title-sec {
+  margin-top: 0;
+}
+.service-sec.style-1 .service-wrapper .card-sec .service-card .card-title-sec .learn-more {
+  margin-top: 20px;
 }
 
 .contact-sec {
@@ -1772,6 +1789,8 @@ h4 {
 
 .counter-sec {
   background-color: #ECF0FB;
+  position: relative;
+  z-index: 1;
 }
 .counter-sec .counter-wrapper {
   display: grid;
@@ -1800,6 +1819,7 @@ h4 {
   justify-content: none;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .counter-sec .counter-wrapper .counter-item {
@@ -1858,6 +1878,15 @@ h4 {
   text-transform: capitalize;
   margin-top: none;
   margin-bottom: 0;
+}
+.counter-sec .counter-wrapper .counter-item .divider {
+  content: "";
+  width: 1px;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #D2D6E4;
 }
 
 .team-sec {

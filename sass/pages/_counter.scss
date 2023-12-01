@@ -1,5 +1,7 @@
 .counter-sec{
     background-color: #ECF0FB;
+    position: relative;
+    z-index: 1;
 
 
     .counter-wrapper{
@@ -7,6 +9,7 @@
         grid-template-columns: auto auto auto auto;
         padding: 40px;
         
+
         @include md {
             padding: 40px 0;
         }
@@ -26,7 +29,7 @@
             flex-direction: column;
             @include flex(none, center);
             gap: 10px;
-
+            position: relative;
             @include md {
                 padding: 49px 24px
             }
@@ -59,6 +62,16 @@
             }
             p{
                 @include paragraph(18px, 500, 28px, $title-color, none);
+            }
+
+            .divider {
+                content: "";
+                width: 1px;
+                height: 220px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #D2D6E4;
             }
         }
     }
