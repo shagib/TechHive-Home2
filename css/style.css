@@ -752,6 +752,150 @@ h4 {
   margin-bottom: 0;
 }
 
+#package-area {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+#package-area .overlay {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(2, 10, 39, 0.7);
+  z-index: -1;
+}
+#package-area .sub-title {
+  color: #F7CF47;
+}
+#package-area .title {
+  color: #ffffff;
+}
+
+.total-packages {
+  position: relative;
+}
+.total-packages .card-pack {
+  padding: 30px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+}
+.total-packages .pricing-title .subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 3px;
+  font-family: "DM Sans", sans-serif;
+  color: #04144E;
+  text-transform: uppercase;
+  letter-spacing: initial;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .total-packages .pricing-title .subtitle {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .total-packages .pricing-title .subtitle {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+  .total-packages .pricing-title .subtitle {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.total-packages .pricing-title h2 {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 54px;
+  color: #04144E;
+  font-family: "Playfair Display", sans-serif;
+  margin-bottom: 0;
+  display: flex;
+}
+.total-packages .pricing-title h2 .currency {
+  font-size: 16px;
+  margin-right: 2px;
+  line-height: 54px;
+  text-align: start;
+}
+.total-packages .pricing-title h2 .time {
+  color: "Playfair Display", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 23px;
+  text-transform: capitalize;
+  margin-left: 2px;
+  align-self: self-end;
+}
+.total-packages .pricing-title .card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  font-family: "DM Sans", sans-serif;
+  color: #6A6C73;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.total-packages .feature-list {
+  padding-top: 28px;
+  padding-bottom: 30px;
+}
+.total-packages .feature-list ul {
+  padding: 30px 0;
+  border-top: 2px solid #F3F4F8;
+  border-bottom: 2px solid #F3F4F8;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+}
+.total-packages .feature-list ul li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 11px;
+  padding: 4px 0;
+}
+.total-packages .feature-list ul li span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  font-family: "DM Sans", sans-serif;
+  color: #04144E;
+  text-transform: capitalize;
+  margin-top: initial;
+  margin-bottom: 0;
+}
+.total-packages .btn {
+  display: flex;
+  justify-content: center;
+  background: #ECF0FB;
+  color: #4566D4;
+  transition: all 0.6s ease-in-out;
+}
+.total-packages .btn:hover {
+  background: #4566D4;
+  color: #ffffff !important;
+}
+
 .feature-area {
   background-color: #F3F4F8;
   padding-bottom: 100px;
@@ -1787,6 +1931,19 @@ h4 {
   padding: 15px 50px;
 }
 
+.gallery-area {
+  background: #ffffff;
+}
+.gallery-area .team-member {
+  background: #ffffff;
+  border-radius: 14px;
+}
+.gallery-area .gallery-content {
+  padding: 30px 25px;
+  box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 14px 14px;
+}
+
 .counter-sec {
   background-color: #ECF0FB;
   position: relative;
@@ -1943,23 +2100,25 @@ h4 {
 .team-sec .member-sec .team-member-area {
   position: relative;
 }
-.team-sec .member-sec .team-member-area .slick-track {
+
+.slick-track {
   margin: 0 -12px;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-  .team-sec .member-sec .team-member-area .slick-track {
+  .slick-track {
     margin: 0 0;
   }
 }
-.team-sec .member-sec .team-member-area .slick-track .team-member-slider {
+.slick-track .team-member-slider {
   margin: 0 12px;
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-  .team-sec .member-sec .team-member-area .slick-track .team-member-slider {
+  .slick-track .team-member-slider {
     margin: 0 18px;
   }
 }
-.team-sec .member-sec .team-member-area .prev-btn, .team-sec .member-sec .team-member-area .next-btn {
+
+.prev-btn, .next-btn {
   position: absolute;
   bottom: -50px;
   width: 60px;
@@ -1970,23 +2129,25 @@ h4 {
   transition: all 0.5s ease-out;
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  .team-sec .member-sec .team-member-area .prev-btn, .team-sec .member-sec .team-member-area .next-btn {
+  .prev-btn, .next-btn {
     display: none !important;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-  .team-sec .member-sec .team-member-area .prev-btn, .team-sec .member-sec .team-member-area .next-btn {
+  .prev-btn, .next-btn {
     display: none !important;
   }
 }
-.team-sec .member-sec .team-member-area .prev-btn:hover, .team-sec .member-sec .team-member-area .next-btn:hover {
+.prev-btn:hover, .next-btn:hover {
   background-color: #4566D4;
   color: #ffffff;
 }
-.team-sec .member-sec .team-member-area .next-btn {
+
+.next-btn {
   right: 0;
 }
-.team-sec .member-sec .team-member-area .slick-dots {
+
+.slick-dots {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1996,27 +2157,27 @@ h4 {
   margin-bottom: 50px;
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  .team-sec .member-sec .team-member-area .slick-dots {
+  .slick-dots {
     display: none !important;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-  .team-sec .member-sec .team-member-area .slick-dots {
+  .slick-dots {
     display: none !important;
   }
 }
-.team-sec .member-sec .team-member-area .slick-dots .slick-active button {
+.slick-dots .slick-active button {
   background: #4566D4;
   width: 100%;
 }
-.team-sec .member-sec .team-member-area .slick-dots li {
+.slick-dots li {
   list-style: none;
   border-radius: 10px;
   width: 100%;
   height: 5px;
   cursor: pointer;
 }
-.team-sec .member-sec .team-member-area .slick-dots li button {
+.slick-dots li button {
   cursor: pointer;
   height: 5px;
   background: #D2D6E4;
@@ -2024,34 +2185,35 @@ h4 {
   font-size: 0;
   width: 100%;
 }
-.team-sec .member-sec .team-member-area .team-member {
+
+.team-member {
   border-radius: 14px;
 }
-.team-sec .member-sec .team-member-area .team-member:hover .team-img img {
+.team-member:hover .team-img img {
   transform: scale(1.1);
 }
-.team-sec .member-sec .team-member-area .team-member .team-img {
+.team-member .team-img {
   position: relative;
   overflow: hidden;
   border-radius: 14px 14px 0 0;
 }
-.team-sec .member-sec .team-member-area .team-member .team-img img {
+.team-member .team-img img {
   width: 100%;
   height: auto;
   transition: all 0.5s ease-out;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area {
+.team-member .member-title-area {
   padding: 30px 25px;
   background-color: #F3F4F8;
   border-radius: 0 0 14px 14px;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-title {
+.team-member .member-title-area .member-title {
   text-align: center;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-title .member-name {
+.team-member .member-title-area .member-title .member-name {
   font-size: 20px;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-title .member-sub-title {
+.team-member .member-title-area .member-title .member-sub-title {
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
@@ -2061,14 +2223,14 @@ h4 {
   margin-top: 2px;
   margin-bottom: 0;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-social-site {
+.team-member .member-title-area .member-social-site {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin-top: 30px;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-social-site .social-site {
+.team-member .member-title-area .member-social-site .social-site {
   width: 44px;
   height: 44px;
   display: flex;
@@ -2081,11 +2243,11 @@ h4 {
   color: #04144E;
   transition: all 0.5s ease-out;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-social-site .social-site:hover {
+.team-member .member-title-area .member-social-site .social-site:hover {
   background: #4566D4;
   color: #ffffff;
 }
-.team-sec .member-sec .team-member-area .team-member .member-title-area .member-social-site .social-site i {
+.team-member .member-title-area .member-social-site .social-site i {
   font-size: 18px;
 }
 

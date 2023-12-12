@@ -6,6 +6,7 @@
     font-family: $body-font;
     color: $color;
     text-transform: uppercase;
+    
     @include md {
       font-size: 16px;
     }

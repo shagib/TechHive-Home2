@@ -1,0 +1,13 @@
+.gallery-area {
+    background: $bg-color1;
+    .team-member {
+        
+        background: $bg-color1;
+        border-radius: 14px;
+    }
+    .gallery-content {
+        padding: 30px 25px;
+        box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+        border-radius: 0 0 14px 14px;
+    }
+}
